@@ -1,0 +1,23 @@
+#tic,.tickets-page  {
+    margin-bottom: 30px;
+}
+
+#tic,.tickets-page .single-event-details-row:nth-last-of-type(1) {
+    margin-bottom: 0;
+}
+
+#tic a, label {
+    font-size: 18px;
+    font-weight: 500;
+    color: #040608;
+}
+
+#tic label {
+    display: block;
+    margin-bottom: 0;
+    color: #232127;
+}
+
+#tic p ,a {
+    color: #747070;
+}

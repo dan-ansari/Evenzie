@@ -1,0 +1,13 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+  }
+  
+  .example-container > * {
+    width: 50%;
+  }
+  #user{
+    padding: 200px;
+  }
+  

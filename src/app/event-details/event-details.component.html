@@ -1,0 +1,71 @@
+
+  <div class="tabs">
+     <!--<ul class="tabs-nav flex">
+        <li class="tab-nav flex justify-content-center align-items-center active" data-target="#tab_details">Details</li>
+        <li class="tab-nav flex justify-content-center align-items-center" data-target="#tab_venue">Venue</li>
+        <li class="tab-nav flex justify-content-center align-items-center" data-target="#tab_organizers">Organizers</li>
+        <li class="tab-nav flex justify-content-center align-items-center" data-target="#tab_about">About the event</li>
+    </ul>  -- tabs-nav --   -->
+    <div class="entry-header">
+        <div class="entry-title">
+            <p>JUST THE BEST</p>
+            <h2>{{eventdetails.event_name}}</h2>
+        </div><!-- entry-title -->
+    </div><!-- entry-header -->
+
+    <div class="tabs-container">
+        <div id="tab_details" class="tab-content">
+          <div class="flex flex-wrap justify-content-between">
+                <div class="single-event-details">
+                    <div class="single-event-details-row">
+                        <label>Start:</label>
+                        <p>{{eventdetails.start_date | date}}</p>
+                    </div>
+
+                    <div class="single-event-details-row">
+                        <label>End:</label>
+                        <p>{{eventdetails.end_date | date}}</p>
+                    </div>
+
+                    <div class="single-event-details-row">
+                        <label>Price:</label>
+                        <p class="sold-out">
+                            &#x20b9;&nbsp;
+                            {{eventdetails.price}}
+                        </p>
+                    </div>
+
+                    <div class="single-event-details-row">
+                        <label>Categories:</label>
+                        <p>{{eventdetails.categories}}</p>
+                    </div>
+
+                    <div class="single-event-details-row">
+                        <label>Tags:</label>
+                        <p><a href="#">{{eventdetails.tags}}</a></p>
+                    </div>
+                    <div class="single-event-details-row" id='tic'>
+                        <label>Venue:</label>
+                        <p>{{eventdetails.vanue}}</p>
+                    </div>
+                   
+                    <div class="single-event-details-row" id=1>
+                        <label>Organizer:</label>
+                        <p>{{eventdetails.organizer}}</p>
+                    </div>
+            
+                    <div class="single-event-details-row" id=1>
+                        <label>About the Event:</label>
+                        <p>{{eventdetails.about_event }}</p>
+                    </div>
+                </div>   <!-- .single-event-details -->
+
+                <div class="single-event-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.946716214373!2d75.82264516496109!3d22.6557751851401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fc0bf32599bf%3A0x1008b35026e513e3!2sInstitute+of+Engineering+%26+Science%2C+IPS+Academy!5e0!3m2!1sen!2sin!4v1554441242030!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <!-- <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=university of san francisco&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> -->
+                </div>
+            
+            </div>   <!-- .justify-content-between -->
+        </div><!-- .tab-content -->
+     </div><!-- .tabs-container -->
+  </div> <!--.tabs -->

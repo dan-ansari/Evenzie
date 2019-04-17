@@ -1,0 +1,118 @@
+<!-- <div class="example-container">
+  <form (ngSubmit)= "signupformsubmit(signup)" #signup = ngForm>
+  
+    <mat-form-field>
+      <input matInput placeholder="First Name" required ngModel name="fname" >
+    </mat-form-field>
+  
+    <mat-form-field>
+      <textarea matInput placeholder="Textarea"></textarea>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-select placeholder="Select">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="example-container">
+        <mat-form-field hintLabel="Max 10 characters">
+          <input matInput #input maxlength="10" placeholder="Enter some input">
+          <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <mat-select placeholder="Select me">
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+          <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        
+  </form>
+</div> -->
+
+<form (ngSubmit)= "signupformsubmit(signup)" #signup = ngForm id='user'>
+<div class="example-container">
+
+    
+<mat-form-field>
+  <mat-label>First Name</mat-label>
+    <input matInput placeholder="Enter your First Name" required ngModel name="first_name" >
+    <mat-error *ngIf="!signup.dirty">Value Required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Enter your Last Name" ngModel name="last_name" >
+    </mat-form-field>
+
+
+
+  <mat-form-field>
+    <mat-label>Gender</mat-label>
+    <mat-select placeholder="Select" ngModel required name="gender" >
+      <mat-option value="MALE">Male</mat-option>
+      <mat-option value="FEMALE">Female</mat-option>
+      <mat-option value="Others">Others</mat-option>
+      </mat-select>
+      <mat-error *ngIf="!signup.dirty">Value Required</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-label>Email Id</mat-label>
+        <input matInput placeholder="Enter your Email Id" type="email" name="email" ngModel [email]="true" required >
+        <mat-error *ngIf="!signup.dirty">Value Required</mat-error>
+        <mat-error *ngIf="!signup.email">Not a valid Email </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput name="password" required #password ngModel placeholder="Enter your password" [type]="hide ? 'password' : 'text'" #password>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="!password.dirty">Value Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input ngModel name="cpassword" required #cpassword matInput placeholder="Confirm your password" [type]="hide1 ? 'password' : 'text'"  pattern="{{password.value}}">
+            <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+            <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="!cpassword.pattern">Password Required</mat-error>
+            <mat-error *ngIf="!cpassword.dirty">Passsword didn't match</mat-error>
+           
+            
+
+          </mat-form-field>
+      <mat-form-field hintLabel="Max 10 characters">
+          <mat-label>Phone Number</mat-label>
+        <input matInput #input maxlength="10" placeholder="Enter Phone Number" required ngModel name="phone_no">
+        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        <mat-error *ngIf="!signup.dirty">Value Required</mat-error>
+      </mat-form-field>
+    
+      <!-- <mat-form-field>
+        <mat-select placeholder="Select me">
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field> -->
+
+        <!--  -->
+    
+   
+        
+        <button [disabled]='!signup.valid' mat-raised-button color="primary"  type="submit" class="btn btn-primary" (click)="dailogbox()">Sign Up</button>
+      </div>
+    </form>

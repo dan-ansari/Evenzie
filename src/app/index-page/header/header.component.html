@@ -1,0 +1,41 @@
+<header class="site-header">    
+  <div class="header-bar navbar ">
+      <div class="container-fluid">
+          <div class="row align-items-center">
+              <div class="col-10 col-lg-4">
+                  <h1 class="site-branding flex">
+                      <a routerLink='home'>EVENZIE</a>
+                  </h1>
+              </div>
+
+              <div class="col-2 col-lg-8">
+                  <nav class="site-navigation">
+                <!--      <div class="hamburger-menu d-lg-none">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                      </div> .hamburger-menu -->
+
+                      <ul>
+                          <li><a routerLink=''  >Home</a></li>
+                          <li><a routerLink='/popular-events' >Events</a></li>
+                          <li><a routerLink='/category' >Category</a></li>
+                          <li><a routerLink='/gallery' >Gallery</a></li>
+                        <!-- <li><a routerLink='/news' >News</a></li> -->
+                          <li><a routerLink='/aboutus'>About Us</a></li>
+                          <li><a routerLink='/contactus' >Contact Us</a></li> 
+
+                         <li> <a class="nav-item nav-link" routerLink='/user'  >user</a> </li>
+                         <li> <a class="nav-item nav-link" routerLink='/dashboard'  >dashboard</a> </li>
+                         <li > <a class="nav-item nav-link"  [hidden]="showlogin" routerLink='/login' > Login</a> </li>
+                         <li>  <a class="nav-item nav-link " [hidden] = "showprofile" routerLink='/profile' >Profile</a>    </li>
+                         <!-- <li><app-login></app-login></li>  
+                         <li><app-signup></app-signup> </li>                   -->
+                      </ul><!-- flex -->                      
+                  </nav><!-- .site-navigation -->              
+              </div><!-- .col-12 -->
+          </div><!-- .row -->
+      </div><!-- container-fluid -->
+  </div><!-- header-bar -->
+</header><!-- .site-header -->

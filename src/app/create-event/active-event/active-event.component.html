@@ -1,0 +1,143 @@
+<!--
+<form (ngSubmit)= "eventformsubmit(eventdet)" #eventdet=ngForm>
+    <div class="example-container">
+
+<mat-form-field>
+    <mat-label>Event Name</mat-label>
+      <input matInput placeholder="Enter Event Name" required ngModel name="event_name" >
+      <mat-error *ngIf="!eventdet.dirty">Value Required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+        <mat-label>Organizer</mat-label>
+          <input matInput placeholder="Enter Organizer Name" required ngModel name="organizer" >
+          <mat-error *ngIf="!eventdet.dirty">Value Required</mat-error>
+        </mat-form-field>
+
+
+    
+
+    <mat-form-field>
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="picker" ngMdel required name="start_date" placeholder="Choose Start date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="!eventdet.dirty">Value Required</mat-error>
+      </mat-form-field>
+    
+      <mat-form-field>
+          <mat-label>End Date</mat-label>
+          <input matInput [matDatepicker]="picker1" ngModel name="end_date" placeholder="Choose End date">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      
+     
+<mat-form-field>
+    <textarea matInput placeholder="Textarea"></textarea>
+  </mat-form-field>
+
+
+  </div>
+  </form>
+-->
+  
+<form  (ngSubmit)= "eventformsubmit(eventdet)" #eventdet=ngForm>
+  <mat-horizontal-stepper  labelPosition="bottom" #stepper>
+      
+         
+              <mat-step  [stepControl]="1" >
+              <ng-template matStepLabel>Fill out Event Details</ng-template>
+              <mat-form-field>
+                  <mat-label>Event Name</mat-label>
+                    <input matInput placeholder="Enter Event Name" required ngModel name="event_name" >
+                    <mat-error *ngIf="!eventdet.dirty">Value Required</mat-error>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field>
+                      <mat-label>Organizer</mat-label>
+                        <input matInput placeholder="Enter Organizer Name" required ngModel name="organizer" >
+                        <mat-error *ngIf="!eventdet.dirty">Value Required</mat-error>
+                      </mat-form-field>
+                  <br>                  
+                  <mat-form-field>
+                      <mat-label>Start Date</mat-label>
+                      <input matInput [matDatepicker]="picker" ngModel required name="start_date" placeholder="Choose Start date">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                      <mat-error *ngIf="eventdet.invalid">Value Required</mat-error>
+                  </mat-form-field>
+                  
+                    <mat-form-field>
+                        <mat-label>End Date</mat-label>
+                        <input matInput [matDatepicker]="picker1" ngModel name="end_date" placeholder="Choose End date">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                      </mat-form-field>
+                      <br>
+                      <mat-form-field>
+                          <mat-label>Category</mat-label>
+                          <mat-select placeholder="Select Category" ngModel required name="category" >
+                            <mat-option value="Fest">Fest</mat-option>
+                            <mat-option value="Seminar">Seminar</mat-option>
+                            <mat-option value="Cultural">Cultural</mat-option>
+                            <mat-option value="Workshop">Workshop</mat-option>
+                            <mat-option value="Concert">Concert</mat-option>
+                            <mat-option value="EDM Night">EDM Night</mat-option>
+                            <mat-option value="Conference">Conference</mat-option>
+                            <mat-option value="Departmental Events">Departmental Events</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="!eventdet.dirty">Value Required</mat-error>
+                        </mat-form-field>
+                      <br> 
+                      <mat-form-field>
+                          <mat-label>Short Description</mat-label>
+                            <textarea matInput placeholder="Enter short description" ngModel name="short_desc"  required></textarea>
+                            <mat-error *ngIf="!eventdet.dirty">Value Required</mat-error>
+                        </mat-form-field>
+                        <br>
+
+              
+      </mat-step>
+      <mat-step   [stepControl]="2">
+         
+              <ng-template matStepLabel>Fill out your Venue and other Details</ng-template>
+            
+              <mat-form-field>
+                <mat-label>Venue</mat-label>
+                  <input matInput placeholder="Enter Address" ngModel name="venue" required>
+                  <mat-error *ngIf="!eventdet.dirty">Value Required</mat-error>
+              </mat-form-field>
+              <br>
+
+              <mat-form-field>
+                  <mat-label>Price</mat-label>
+                    <input matInput placeholder="Enter amount for ticket" ngModel name="price" >
+                    <span matPrefix>&#x20b9;&nbsp;</span>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Tags</mat-label>
+                      <textarea matInput  placeholder="Enter Tags" ngModel name="tags"></textarea>
+                      <mat-error *ngIf="!eventdet.dirty">Value Required</mat-error>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field>
+                      <mat-label>Event Description</mat-label>
+                        <textarea matInput rows="8" placeholder="Enter Event Description" ngModel name="about_event" required></textarea>
+                        <mat-error *ngIf="!eventdet.dirty">Value Required</mat-error>
+                    </mat-form-field>
+                    <br>
+                  
+
+      </mat-step>
+      <mat-step [stepControl]="3">
+          <ng-template matStepLabel>Done</ng-template>
+          You are now done.
+          <div>
+              <button mat-raised-button color="primary" type="submit">Submit</button>
+              <button mat-button (click)=" setreset()">Reset</button>
+          </div>
+      </mat-step>
+  </mat-horizontal-stepper> 
+  </form>
